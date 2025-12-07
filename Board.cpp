@@ -291,3 +291,24 @@ int Board::getScore() const {
 bool Board::getIsGameOver() const {
     return gameOver;
 }
+
+int Board::getGridSize() const{
+    return GRID_SIZE;
+}
+
+char Board::getGridChar(int row, int col) const {
+    if (row >= 0 && row < GRID_SIZE && col >= 0 && col < GRID_SIZE) {
+        return grid[row][col];
+    }
+    return ' ';
+}
+
+void Board::setGridChar(int row, int col, char ch) {
+    if (row >= 0 && row < GRID_SIZE && col >= 0 && col < GRID_SIZE) {
+        grid[row][col] = ch;
+    }
+}
+
+const std::vector<std::vector<char>>& Board::getGrid() const {
+    return grid;
+}

@@ -1,4 +1,4 @@
-// board.h
+// Board.h
 
 #ifndef BOARD_H
 #define BOARD_H
@@ -88,6 +88,34 @@ public:
     // Getters
     int getScore() const;
     bool getIsGameOver() const;
+    
+    /**
+     * Get the grid size
+     * @return The size of the grid
+     */
+    int getGridSize() const;
+    
+    /**
+     * Get a character from the grid at specified position
+     * @param row Row position
+     * @param col Column position
+     * @return The character at that position
+     */
+    char getGridChar(int row, int col) const;
+    
+    /**
+     * Set a character in the grid at specified position
+     * @param row Row position
+     * @param col Column position
+     * @param ch The character to set
+     */
+    void setGridChar(int row, int col, char ch);
+    
+    /**
+     * Get the entire grid (for GUI rendering)
+     * @return Reference to the grid
+     */
+    const std::vector<std::vector<char>>& getGrid() const;
 
 private:
     const int GRID_SIZE;
